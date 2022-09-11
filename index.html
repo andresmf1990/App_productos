@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Product App</title>
+    <!--MIS APUNTES
+    Bootswatch similar a bootstrap, trae el código LITERA -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css"
+    />
+
+    <!-- Custom CSS 
+    <link rel="stylesheet" href="App.css" /> -->
+  </head>
+
+  <body>
+    <!--MIS APUNTES
+    barra de navegación, utiliza los colores del themes >define el texto< -->
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Products App</a>
+    </nav>
+    <!--MIS APUNTES
+   CONTAINER todo centrado< -->
+    <div class="container">
+      <!-- APPLICATION -->
+          <!--MIS APUNTES
+    bootstrap habitualmente tiene 12 columnas (4+8)
+    HEADER permite título en la tarjeta
+    BODY input y botones -->
+      <div id="App" class="row pt-5">
+        <!-- FORM -->
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header">
+              <h4>Add Add A Product</h4>
+            </div>
+               <!--MIS APUNTES
+            reemplaza el botón "action" por no tener bd asociada al proyecto y permite interacción con js-->
+            <form id="product-form" class="card-body">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Product Name"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="price"
+                  step="0.01"
+                  placeholder="Product Price"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="year"
+                  min="1900"
+                  max="2099"
+                  step="1"
+                  value="2018"
+                  class="form-control"
+                />
+              </div>
+                 <!--MIS APUNTES
+                botón de envío y tendrá el tamaño del formulario (BLOCK)-->
+              <input
+                type="submit"
+                value="Save"
+                class="btn btn-primary btn-block"
+              />
+            </form>
+          </div>
+        </div>
+
+        <!-- PRODUCTS LIST -->
+           <!--MIS APUNTES
+        será llenado desde JS-->
+        <div id="product-list" class="col-md-8"></div>
+      </div>
+    </div>
+   <!-- MIS APUNTES
+    lee el archibo de JS-->
+    <script src="App.js" type="module"></script>
+  </body>
+</html>
